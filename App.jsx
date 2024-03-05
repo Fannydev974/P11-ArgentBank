@@ -7,7 +7,7 @@ import {
 
 import Header from "./Componnent/Header/header";
 import Footer from './Componnent/Footer/footer';
-
+import Home from './Componnent/Pages/home';
 
 function App() {
     //useSelector
@@ -17,7 +17,7 @@ function App() {
                 <Header />
 
                 <Routes>
-                    <Route>{/*Accueil*/}</Route>
+                    <Route path="/" element={<Home />} />
                     <Route>{/*Login*/}</Route>
                     <Route>{/*Erreur*/}</Route>
                 </Routes>
