@@ -1,0 +1,28 @@
+.main-error {
+    height: 85dvh;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container-error {
+        width: 25%;
+        height: 80px;
+
+        justify-content: center;
+        background-color: yellow;
+        padding: 15px;
+
+        .title-error {
+            color: green;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+        }
+    }
+}
