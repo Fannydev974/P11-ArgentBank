@@ -1,10 +1,10 @@
 import React from 'react'
 import "./home.css"
-import img_chat from "../../../img/icon-chat_1.avif";
-import img_money from "../../../img/icon-money_1.avif";
-import img_security from "../../../img/icon-security_1.avif";
+import img_chat from "../../img/icon-chat_1.avif";
+import img_money from "../../img/icon-money_1.avif";
+import img_security from "../../img/icon-security_1.avif";
 
-import Features from '../../Features/features.jsx';
+import Features from '../../Component/Features/features.jsx';
 
 function home() {
     return (

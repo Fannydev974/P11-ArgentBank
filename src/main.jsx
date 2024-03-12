@@ -1,17 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import store from './Component/Redux/store'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+//Redux
+import store from './Redux/store';
 import { Provider } from 'react-redux'
 
 
 //import mongoose from 'mongoose';
 //mongoose.connect()
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById('root')
-)
+  </Provider>//pour stocker le store
+);

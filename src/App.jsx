@@ -1,13 +1,12 @@
 import React from 'react'
-// import "redux"
-import {
-  BrowserRouter as Router, Routes, Route
-} from 'react-router-dom';
-//import { useSelector } from "react-redux" pour récuperer l'état de mon store
+import './App.css';
+import "redux"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+//import { useSelector } from "react-redux" // pour récuperer l'état de mon store
 
 import Header from "./Component/Header/header.jsx";
 import Footer from './Component/Footer/footer.jsx';
-import Home from '../src/Component/Pages/Home/home.jsx';
+import Home from './Pages/Home/home.jsx';
 
 function App() {
   //useSelector
