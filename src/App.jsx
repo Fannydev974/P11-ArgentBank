@@ -7,6 +7,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./Component/Header/header.jsx";
 import Footer from './Component/Footer/footer.jsx';
 import Home from './Pages/Home/home.jsx';
+import Login from './Pages/Login/login.jsx';
+
+
 
 function App() {
   //useSelector
@@ -17,7 +20,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route>{/*Login*/}</Route>
+          <Route path="/Login" element={<Login />} />
           <Route>{/*Erreur*/}</Route>
         </Routes>
 

@@ -1,0 +1,46 @@
+.main-login {
+    height: 800px;
+    background-color: #12002b;
+    display: flex;
+    justify-content: center;
+}
+
+.main-login .section-login {
+    box-sizing: border-box;
+    width: 300px;
+    height: 365px;
+    margin-top: 3rem;
+    background-color: #FFFFFF;
+    padding: 2rem;
+}
+
+.main-login .section-login .form-header {
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.main-login .section-login .form-header i {
+    margin-bottom: 10px;
+}
+
+.main-login .section-login .form {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-login .section-login .check-login {
+    display: flex;
+    margin-top: 20px;
+}
+
+.main-login .section-login .check-login label {
+    margin-left: 5px;
+}
+
+
+.main-login .section-login .btn-login {
+    width: 252px;
+    height: 38px;
+}

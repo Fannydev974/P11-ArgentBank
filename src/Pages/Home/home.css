@@ -6,11 +6,15 @@
 .main-home .features {
     background-color: #FFFFFF;
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
 }
 
 @media (min-width: 920px) {
     .features {
         flex-direction: row;
     }
+}
+
+.Features_card {
+    display: flex;
 }
