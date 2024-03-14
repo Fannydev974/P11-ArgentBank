@@ -1,6 +1,9 @@
 import React from 'react'
 import './login.css'
 
+import Button from '../../Component/Button/button.jsx';
+import Formular from '../../Component/Formular/formular.jsx';
+
 
 function login() {
     return (
@@ -12,8 +15,11 @@ function login() {
                     <h2>Sign In</h2>
                 </div>
 
-                <Field label="Username" content="email" type="email" />
-                <Field label="Password" content="password" type="password" />
+
+
+
+                <Formular label="Username" content="email" type="email" />
+                <Formular label="Password" content="password" type="password" />
 
                 <div className="login_check">
                     <input type="checkbox" id="remember" name="check-remember" />

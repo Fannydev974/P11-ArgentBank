@@ -9,20 +9,19 @@
     .container-error {
         width: 25%;
         height: 80px;
-
         justify-content: center;
         background-color: yellow;
         padding: 15px;
+    }
 
-        .title-error {
-            color: green;
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
+    .title-error {
+        color: green;
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
 
-        .error {
-            color: red;
-            font-size: 16px;
-        }
+    .error {
+        color: red;
+        font-size: 16px;
     }
 }

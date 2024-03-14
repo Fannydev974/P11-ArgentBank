@@ -8,7 +8,7 @@ import Header from "./Component/Header/header.jsx";
 import Footer from './Component/Footer/footer.jsx';
 import Home from './Pages/Home/home.jsx';
 import Login from './Pages/Login/login.jsx';
-
+import Error from './Pages/Error/error.jsx';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
-          <Route>{/*Erreur*/}</Route>
+          <Route path="/Error" element={<Error />} />
         </Routes>
 
 

@@ -6,6 +6,8 @@ import img_security from "../../img/icon-security_1.avif";
 
 import Features from '../../Component/Features/features.jsx';
 import Banner from '../../Component/Banner/banner.jsx';
+
+
 function home() {
     return (
         <main className='main_home'>
