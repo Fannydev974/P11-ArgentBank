@@ -28,7 +28,7 @@ function login() {
 
         // Envoie requête vers l'api pour faire la connexion
         try {
-            const goRequest = await axios.post("http://localhost:3001/api/v1/user/login", acceptForm, {
+            const goRequest = await axios.post("'http://localhost:3001/api/v1/user/login'", acceptForm, {
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -36,18 +36,18 @@ function login() {
 
             // Vérification que la requête ai réussie
             // Si problème (IF)
-            if (response.status === 200) {
-                const responseData = response.data // récuperation données
+            if (goRequest.status === 200) {
+                const responseData = goRequest.data // récuperation données
                 const token = responseData.body.token // pour prendre le token (auth)
                 localStorage.setItem("authToken", token) // enregistrement du token
                 dispatch(startSignIn({ token })) // envoie action au store (utilisateur connecté!)
-                navigate("/User") // redirection vers page
+                navigation("/User") // redirection vers page
             } else {
-                setErrorMessage(response.statusText) // Pour faire la mise à jour du message d'erreur
+                goErrorMessage(goRequest.statusText) // Pour faire la mise à jour du message d'erreur
             }
         } catch {
             // Gestion erreurs non prévues
-            setErrorMessage("An error as occured.") //  Pour faire la mise à jour du message d'erreur
+            goErrorMessage("An error as occured.") //  Pour faire la mise à jour du message d'erreur
         }
     }
 
@@ -63,7 +63,7 @@ function login() {
                     <h2>Sign In</h2>
                 </div>
 
-                <form onSubmit={submit}>
+                <form onSubmit={handleSubmit}>
                     {errorMessage && <p className="error-login">{errorMessage}</p>}
 
                     <Formular label="Username" content="email" type="email" onChange={(e) => goEmail(e.target.value)} required />

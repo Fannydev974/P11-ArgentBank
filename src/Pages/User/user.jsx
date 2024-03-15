@@ -4,7 +4,7 @@ import axios from "axios" //Axios,bibliothèque JavaScript pour effectuer des re
 
 import './user.css'
 
-import { profile } from '../../Redux/Reducer/authSlice.jsx';
+import { profileSlice } from '../../Redux/Reducer/indexSlice.jsx';
 
 
 function user() {
@@ -28,7 +28,7 @@ function user() {
             )
             if (response.status === 200) {
                 const responseData = response.data
-                dispatch(profile(responseData)) // Pour la mise à jour de la valeur
+                dispatch(profileSlice(responseData)) // Pour la mise à jour de la valeur
                 // + déclenche rendu
             } else {
                 console.error("Error response : ", response.statusText)
@@ -48,13 +48,12 @@ function user() {
 
 
     return (
-        <div>
-
-        </div>
+        <main className="main_user">
+            <section className="card">
+                <h2 className="hidden">Accounts</h2>
+            </section>
+        </main>
     )
 }
 
 export default user
-
-// React utilise React Redux pour récupérer les données de profil utilisateur depuis une API à l'aide d'Axios, stocke ces données dans le store Redux à l'aide de dispatch,
-//et déclenche cette récupération dès que le composant est monté ou que le token d'authentification change.
