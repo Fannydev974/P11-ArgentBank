@@ -10,6 +10,7 @@ import { Provider } from 'react-redux'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  /* utilisation du Provider pour rendre le store Redux disponible pour tous les composants de l'application */
   <Provider store={store}>
     <App />
   </Provider>//pour stocker le store

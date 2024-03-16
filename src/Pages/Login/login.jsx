@@ -4,12 +4,12 @@ import './login.css'
 import Button from '../../Component/Button/button.jsx';
 import Formular from '../../Component/Formular/formular.jsx';
 
-import { useNavigation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux'; // Pour la mise à jour des value
 
 function login() {
 
-    const navigation = useNavigation() // useNavigation pour la navigation entre les pages
+    const navigation = useNavigate() // useNavigation pour la navigation entre les pages
     const dispatch = useDispatch() // useDispatch pour dispatcher des actions Redux
 
     // Stockage des valeurs form
@@ -41,19 +41,15 @@ function login() {
                 const token = responseData.body.token // pour prendre le token (auth)
                 localStorage.setItem("authToken", token) // enregistrement du token
                 dispatch(startSignIn({ token })) // envoie action au store (utilisateur connecté!)
-                navigation("/User") // redirection vers page
+                navigation.push("/User") // redirection vers page
             } else {
                 goErrorMessage(goRequest.statusText) // Pour faire la mise à jour du message d'erreur
             }
         } catch {
             // Gestion erreurs non prévues
-            goErrorMessage("An error as occured.") //  Pour faire la mise à jour du message d'erreur
+            goErrorMessage("Une erreur s’est produite.") //  Pour faire la mise à jour du message d'erreur
         }
     }
-
-
-
-
     return (
         <main className="main-login">
             <section className="section-login">

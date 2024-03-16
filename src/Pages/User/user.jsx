@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import axios from "axios" //Axios,bibliothèque JavaScript pour effectuer des requêtes HTTP.
+import EditUserName from "../..Component/EditUserName/editUserName.jsx";
 
 import './user.css'
 
@@ -13,6 +14,7 @@ function user() {
 
     // récupérer les données de profil utilisateur depuis l'API
     async function fetchDataProfile(authToken) {
+
         // Envoie requête API
         try {
             const response = await axios.post(
@@ -49,6 +51,7 @@ function user() {
 
     return (
         <main className="main_user">
+            <EditUserName />
             <section className="card">
                 <h2 className="hidden">Accounts</h2>
             </section>
