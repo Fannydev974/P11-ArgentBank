@@ -24,7 +24,6 @@ function App() {
           <Route path="/user" element={token ? <User /> : <Error />} />
         </Routes>
 
-
         <Footer />
       </Router>
     </div>

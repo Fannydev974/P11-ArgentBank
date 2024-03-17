@@ -29,7 +29,7 @@ function header() {
         <header>
             {/* lien vers page d'accueil*/}<Link to="/">
                 <img className="logo" src={Logo} alt="logo Argent Bank" />
-                {/*<h1 className="hidden">Argent Bank</h1>*/}
+
             </Link>
             <nav>
                 {user ? (
