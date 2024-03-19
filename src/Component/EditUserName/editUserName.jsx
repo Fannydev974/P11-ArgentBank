@@ -35,7 +35,7 @@ function editUserName() {
                 }
             )
             if (response.status === 200) {
-                const respData = response.data
+                const respData = response.data //extrait les données de la réponse de la requête et les stocke dans la variable respData.
                 dispatch(newUserName(editedName)) // mise a jour username dans store
                 setIsOpen(false)
             } else {

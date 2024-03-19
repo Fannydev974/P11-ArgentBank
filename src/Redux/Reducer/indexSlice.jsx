@@ -30,3 +30,6 @@ const indexSlice = createSlice({
 
 export const { profileSlice, newUserName } = indexSlice.actions
 export default indexSlice.reducer
+
+// spécifie comment l'état de l'application change en réponse à des actions.
+// Il prend en entrée l'état actuel de l'application et une action, puis retourne un nouvel état.

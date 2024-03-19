@@ -3,6 +3,8 @@
     flex-direction: column;
     align-items: center;
     background-color: #12002b;
+    width: 1300px;
+    height: 700px;
 }
 
 .main_user .card {

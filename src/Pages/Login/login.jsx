@@ -27,7 +27,6 @@ function login() {
             email: email,
             password: password,
         }
-
         // Envoie requête vers l'api pour faire la connexion
         try {
             const setRequest = await axios.post("http://localhost:3001/api/v1/user/login",
@@ -66,8 +65,8 @@ function login() {
                 <form onSubmit={handleSubmit}>
                     {errorMessage && <p className="error-login">{errorMessage}</p>}
 
-                    <Formular label="Username" content="email" type="email" onChange={(e) => setEmail(e.target.value)} required />
-                    <Formular label="Password" content="password" type="password" onChange={(e) => setPassword(e.target.value)} required />
+                    <Formular label="Username" content="email" type="email" onChange={(event) => setEmail(event.target.value)} required />
+                    <Formular label="Password" content="password" type="password" onChange={(event) => setPassword(event.target.value)} required />
 
                     <div className="login_check">
                         <input type="checkbox" id="remember" name="check-remember" onChange={() => setRemember(!remember)} checked={remember} />

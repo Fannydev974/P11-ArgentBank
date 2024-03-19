@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import axios from "axios" //Axios,bibliothèque JavaScript pour effectuer des requêtes HTTP.
 import EditUserName from "../../Component/EditUserName/editUserName.jsx";
+import UserMoney from "../../Component/UserMoney/userMoney.jsx";
 
 import './user.css'
 
@@ -10,10 +11,6 @@ import { profileSlice } from '../../Redux/Reducer/indexSlice.jsx';
 
 function user() {
     const dispatch = useDispatch() // récupérer la fonction de dispatch Redux.
-
-    // Utiliser useSelector pour accéder aux données du profil utilisateur depuis Redux
-    // const profile = useSelector((state) => state.profile);
-
 
     // récupérer les données de profil utilisateur depuis l'API
     async function fetchDataProfile(authToken) {
@@ -57,8 +54,9 @@ function user() {
             <EditUserName />
             <section className="card">
                 <h2 className="hidden">Accounts</h2>
-                {/*  <p>Username: {}</p>
-                <p>Email: {}</p>*/}
+                <userMoney title="Argent Bank Checking (x8349)" content="$2,082.79" subtitle="Available Balance" />
+                <userMoney title="Argent Bank Savings (x6712)" content="$10,928.42" subtitle="Available Balance" />
+                <userMoney title="Argent Bank Credit Card (x8349)" content="$184.30" subtitle="Current Balance" />
             </section>
         </main>
     )
