@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import axios from "axios" //Axios,bibliothèque JavaScript pour effectuer des requêtes HTTP.
+
 import EditUserName from "../../Component/EditUserName/editUserName.jsx";
 import UserMoney from "../../Component/UserMoney/userMoney.jsx";
 
@@ -46,17 +47,17 @@ function user() {
         if (authToken) {
             fetchDataProfile(authToken)
         }
-    }, [])
+    } /*,[]*/)
 
 
     return (
         <main className="main_user">
             <EditUserName />
             <section className="card">
-                <h2 className="hidden">Accounts</h2>
-                <userMoney title="Argent Bank Checking (x8349)" content="$2,082.79" subtitle="Available Balance" />
-                <userMoney title="Argent Bank Savings (x6712)" content="$10,928.42" subtitle="Available Balance" />
-                <userMoney title="Argent Bank Credit Card (x8349)" content="$184.30" subtitle="Current Balance" />
+                {/* <h2 className="hidden">title-user</h2>*/}
+                <UserMoney title="Argent Bank Checking (x8349)" content="$2,082.79" subtitle="Available Balance" />
+                <UserMoney title="Argent Bank Savings (x6712)" content="$10,928.42" subtitle="Available Balance" />
+                <UserMoney title="Argent Bank Credit Card (x8349)" content="$184.30" subtitle="Current Balance" />
             </section>
         </main>
     )

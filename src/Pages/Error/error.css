@@ -1,27 +1,25 @@
 .main-error {
-    height: 85dvh;
+    height: 310px;
     width: 100%;
-    background-color: aqua;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .container-error {
-        width: 25%;
+        width: 100%;
         height: 80px;
         justify-content: center;
-        background-color: yellow;
         padding: 15px;
     }
 
     .title-error {
-        color: green;
+        color: #00bc77;
         font-size: 38px;
         margin-bottom: 15px;
     }
 
     .error {
-        color: red;
+        color: #2c3e50;
         font-size: 16px;
     }
 }

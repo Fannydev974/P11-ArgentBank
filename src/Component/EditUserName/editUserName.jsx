@@ -99,7 +99,7 @@ function editUserName() {
                         </form>
                         <Button
                             content="Cancel"
-                            style={{ backgroundColor: "red" }}
+                            /*style={{ backgroundColor: "red" }}*/
                             onClick={() => {
                                 setIsOpen(false)
                             }}

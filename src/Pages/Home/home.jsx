@@ -1,8 +1,8 @@
 import React from 'react'
 import "./home.css"
-import img_chat from "../../img/icon-chat_1.avif";
-import img_money from "../../img/icon-money_1.avif";
-import img_security from "../../img/icon-security_1.avif";
+import img_chat from "../../img/icon-chat.png";
+import img_money from "../../img/icon-money.png";
+import img_security from "../../img/icon-security.png";
 
 import Features from '../../Component/Features/features.jsx';
 import Banner from '../../Component/Banner/banner.jsx';

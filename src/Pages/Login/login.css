@@ -9,14 +9,12 @@
 
 .main-login .section-login {
     box-sizing: border-box;
-    /*width: 300px;*/
+    width: 300px;
     height: 365px;
     margin-top: 3rem;
     background-color: #FFFFFF;
     padding: 2rem;
 }
-
-
 
 .main-login .section-login .form_header {
     height: 55px;
@@ -25,9 +23,9 @@
     margin-bottom: 25px;
 }
 
-.main-login .section-login .form_header i {
+/*.main-login .section-login .form_header i {
     margin-bottom: 10px;
-}
+}*/
 
 .main-login .section-login .form {
     display: flex;
@@ -43,23 +41,29 @@
 
 .main-login .section-login .login_check label {
     margin-left: 5px;
+    margin-top: 0px;
 }
 
 label {
     display: flex;
     width: 240px;
     font-weight: 600;
+    margin-top: 10px;
 }
 
 input {
     display: flex;
     justify-content: flex-start;
+    height: 20px;
 }
-
 
 .main-login .section-login .btn-login {
     width: 252px;
     height: 38px;
+}
+
+.form .btn-login {
+    width: 100px;
 }
 
 .error-login {
