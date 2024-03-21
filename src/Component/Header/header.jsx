@@ -27,7 +27,7 @@ function header() {
 
     return (
         <header>
-            {/* lien vers page d'accueil*/}<Link to="/">
+            <Link to="/"> {/* lien vers page d'accueil*/}
                 <img className="logo" src={Logo} alt="logo Argent Bank" />
             </Link>
             <nav>

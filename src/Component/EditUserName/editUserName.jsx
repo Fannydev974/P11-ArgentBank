@@ -95,15 +95,16 @@ function editUserName() {
                             <Formular label="User Name :" type="text" content="userName" onChange={(event) => setUserName(event.target.value)} />
                             <Formular label="First Name :" type="text" content="firstName" placeholder={userProfile.firstName} />
                             <Formular label="Last Name :" type="text" content="lastName" placeholder={userProfile.lastName} />
-                            <Button content="Save" width="88px" height="40px" />
+                            <Button content="Save" width="80px" height="40px" />
+
+                            <Button
+                                content="Cancel"
+                                /*style={{ backgroundColor: "red" }}*/
+                                onClick={() => {
+                                    setIsOpen(false)
+                                }}
+                            />
                         </form>
-                        <Button
-                            content="Cancel"
-                            /*style={{ backgroundColor: "red" }}*/
-                            onClick={() => {
-                                setIsOpen(false)
-                            }}
-                        />
                     </div>
                 </>
             )}

@@ -27,9 +27,10 @@
     margin-bottom: 10px;
 }*/
 
-.main-login .section-login .form {
+.main-login .section-login {
     display: flex;
     flex-direction: column;
+    height: 390px;
 }
 
 
@@ -38,6 +39,7 @@
     margin-top: 20px;
     width: 219px;
 }
+
 
 .main-login .section-login .login_check label {
     margin-left: 5px;
@@ -62,9 +64,6 @@ input {
     height: 38px;
 }
 
-.form .btn-login {
-    width: 100px;
-}
 
 .error-login {
     color: red;
