@@ -10,20 +10,20 @@ import { startSignIn, setLogout } from '../../Redux/Reducer/authSlice';
 function header() {
 
     const user = useSelector((state) => state.auth.isAuthenticated)
-    const dispatch = useDispatch() // màj valeur
+    const dispatch = useDispatch() // Initialise la fonction dispatch pour la gestion des actions Redux
     const userProfile = useSelector((state) => state.user) // extrait user profil
 
-    //* Deco user
-    const userSignOut = () => {
-        dispatch(setLogout())
+    //  Déconnexion utilisateur (user)
+    const userSignOut = () => { // Définit la fonction pour la déconnexion de l'utilisateur
+        dispatch(setLogout()) // Dispatch l'action de déconnexion
     }
 
-    useEffect(() => {
-        const token = localStorage.getItem("authToken")
+    useEffect(() => { // Utilise useEffect pour exécuter une action lors du rendu initial du composant
+        const token = localStorage.getItem("authToken")// Récupère le token d'authentification depuis le localStorage
         if (token) {
-            dispatch(startSignIn({ token })) // co user
+            dispatch(startSignIn({ token })) // Dispatch l'action de connexion avec le token récupéré
         }
-    }, [dispatch])
+    }, [dispatch])// Déclenche l'effet uniquement lorsque le dispatch change
 
     return (
         <header>
@@ -31,11 +31,12 @@ function header() {
                 <img className="logo" src={Logo} alt="logo Argent Bank" />
             </Link>
             <nav>
-                {user ? (
+                {user ? (// Condition pour vérifier si l'utilisateur est connecté
                     <>
                         <Link to="/User" className="link">
                             <i className="fa fa-user-circle icon-header"></i>
                             {!userProfile.userName ? <>{userProfile.firstName}</> : <>{userProfile.userName}</>}
+                            {/* Affiche le nom d'utilisateur ou le prénom  */}
                         </Link>
                         <Link to="/Login" onClick={userSignOut} className="link">
                             <i className="fa fa-sign-out icon-header"></i>
@@ -53,7 +54,3 @@ function header() {
     )
 }
 export default header
-{/* <Link to="/Login" className="link">
-                    <i className="fa fa-user-circle icon-header"></i>
-                    Sign In
-    </Link>*/}
