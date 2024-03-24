@@ -31,3 +31,6 @@ function App() {
 }
 
 export default App
+// Si une variable token est définie et évaluée comme vraie, la composante <User /> est rendue.
+//Sinon, la composante < Error /> est rendue.Cela permet de contrôler quelles composantes sont affichées en fonction
+// de l'état de l'application.

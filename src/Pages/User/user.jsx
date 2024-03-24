@@ -64,3 +64,6 @@ function user() {
 }
 
 export default user
+// Cecode est une composante qui dépend de Redux pour gérer l'état global de l'application,
+//notamment les données utilisateur,
+//et utilise Axios pour effectuer des requêtes HTTP vers une API. 
