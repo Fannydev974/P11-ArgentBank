@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import './login.css'
-import axios from "axios";
+import axios from "axios"; // bibliothèque JS pour effectuer des requêtes HTTP.
 import Button from '../../Component/Button/button.jsx';
 import Formular from '../../Component/Formular/formular.jsx';
 
@@ -15,6 +15,7 @@ function login() {
     const dispatch = useDispatch() // useDispatch pour dispatcher des actions Redux
 
     // Stockage des valeurs form
+    // useState pour déclarer des états locaux (email, password...)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
@@ -50,7 +51,7 @@ function login() {
             }
         } catch (error) {
             // Gestion erreurs non prévues
-            setErrorMessage("An error as occured.") //  Pour faire la mise à jour du message d'erreur (une erreur c'est produite)
+            setErrorMessage("An error as occured.") // Pour faire la mise à jour du message d'erreur (une erreur c'est produite)
         }
     }
     return (
@@ -82,3 +83,6 @@ function login() {
 }
 
 export default login
+//En résumé, ce composant gère la logique de connexion à une application web en envoyant des requêtes HTTP
+//vers une API backend, en stockant le token d'authentification dans le navigateur et en dispatchant des actions
+//Redux pour mettre à jour l'état global de l'application.

@@ -28,7 +28,7 @@ function user() {
                         Authorization: `Bearer ${authToken}`,
                     },
                 }
-            )
+            )// une fois que la requête est envoyée, la réponse du serveur est stockée dans la variable "response".
             if (response.status === 200) {
                 const responseData = response.data
                 dispatch(profileSlice(responseData)) // Pour la mise à jour de la valeur

@@ -9,7 +9,7 @@ basePath: /api/v2 #
 schemes:
   - http
 paths: ####################### Routes qui existaient déja dans /api/v1 ######################################### 
-  /user/login:
+  /user/login: # Endpoint pour la connexion utilisateur
     post:
       tags:
         - User Module
@@ -33,7 +33,7 @@ paths: ####################### Routes qui existaient déja dans /api/v1 ########
           description: Invalid Fields
         '500':
           description: Internal Server Error
-  /user/signup:
+  /user/signup: # Endpoint pour l'inscription utilisateur
     post:
       tags:
         - User Module
@@ -57,7 +57,7 @@ paths: ####################### Routes qui existaient déja dans /api/v1 ########
           description: Invalid Fields
         '500':
           description: Internal Server Error
-  /user/profile:
+  /user/profile: # Endpoint pour le profil utilisateur
     post:
       security:
         - Bearer: []
@@ -102,7 +102,7 @@ paths: ####################### Routes qui existaient déja dans /api/v1 ########
 ################################ Modifications: NOUVELLES ROUTES #########################
 
 ###### Route de récupération des transactions du mois en cours ########
-/accounts/{accoutID}/transactions/current:
+/accounts/{accoutID}/transactions/current:  # Endpoint pour les transactions du mois en cours
     get: #Méthode GET pour récupérer des données (les transactions du mois en cours)
       security:
         - Bearer: []
@@ -119,7 +119,7 @@ paths: ####################### Routes qui existaient déja dans /api/v1 ########
 
 ###################### Requête URL #############################################################
 ### Routes pour la récupération des détails de la transaction et mise a jour de ceux-ci###
-  /accounts/{accountID}/transactions/{transactionID}:
+  /accounts/{accountID}/transactions/{transactionID}: # Endpoint pour les détails de transaction
     get:
       security:
         - Bearer: []
