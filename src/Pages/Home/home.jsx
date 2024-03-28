@@ -31,3 +31,6 @@ function home() {
 }
 
 export default home
+// Ce composant home définit la structure de la page d'accueil de l'application
+// il reprend la "banner" et "feature" ainsi que
+//les images et les contenus des caractéristiques sont fournis en tant que données statiques.

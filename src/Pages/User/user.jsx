@@ -56,7 +56,7 @@ function user() {
             <section className="card">
                 {/* <h2 className="hidden">title-user</h2>*/}
                 <UserMoney title="Argent Bank Checking (x8349)" content="$2,082.79" subtitle="Available Balance" />
-                <UserMoney title="Argent Bank Savings (x6712)" content="$10,928.42" subtitle="Available Balance" />
+                <UserMoney title="Argent Bank Savings (x6712)" content=" $10,928.42" subtitle="Available Balance" />
                 <UserMoney title="Argent Bank Credit Card (x8349)" content="$184.30" subtitle="Current Balance" />
             </section>
         </main>
@@ -64,6 +64,6 @@ function user() {
 }
 
 export default user
-// Cecode est une composante qui dépend de Redux pour gérer l'état global de l'application,
+// Cecode est un composant qui dépend de Redux pour gérer l'état global de l'application,
 //notamment les données utilisateur,
 //et utilise Axios pour effectuer des requêtes HTTP vers une API. 

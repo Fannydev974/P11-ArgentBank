@@ -21,10 +21,10 @@ function editUserName() {
         event.preventDefault()
         try {
             // Envoie requête API
-            const response = await axios.put(
+            const response = await axios.put( //méthode PUT est utilisée pour modifier le nom d'utilisateur (userName)
                 "http://localhost:3001/api/v1/user/profile",
                 {
-                    userName: editedName,
+                    userName: editedName, //userName est envoyée avec la nouvelle valeur du nom d'utilisateur (editedName).
                 },
                 {
                     headers: {
@@ -99,7 +99,6 @@ function editUserName() {
                                 <Button content="Save" width="80px" height="40px" />
                                 <Button
                                     content="Cancel"
-                                    /*style={{ backgroundColor: "red" }}*/
                                     onClick={() => {
                                         setIsOpen(false)
                                     }}

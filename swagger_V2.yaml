@@ -102,7 +102,7 @@ paths: ####################### Routes qui existaient déja dans /api/v1 ########
 ################################ Modifications: NOUVELLES ROUTES #########################
 
 ###### Route de récupération des transactions du mois en cours ########
-/accounts/{accoutID}/transactions/current:  # Endpoint pour les transactions du mois en cours
+  /accounts/{accountID}/transactions/current:  # Endpoint pour les transactions du mois en cours
     get: #Méthode GET pour récupérer des données (les transactions du mois en cours)
       security:
         - Bearer: []
@@ -116,6 +116,22 @@ paths: ####################### Routes qui existaient déja dans /api/v1 ########
           description: Unique account ID
           required: true
           type: string
+           produces:
+        - application/json
+        responses:
+        '200':
+          description: Account's transactions fetched successfully for the current month
+          schema:
+            $ref: '#/definitions/UserAccountList'
+        '400':
+          description: Bad request - Invalid fields #Champs non valides
+        '401':
+          description: Unauthorized - Authentification failed
+        '404':
+          description: No transaction found for the specified month and account #aucunes transactions trouvée pour le mois
+        '500':
+          description: Internal Server Error - Something went wrong
+
 
 ###################### Requête URL #############################################################
 ### Routes pour la récupération des détails de la transaction et mise a jour de ceux-ci###
@@ -144,7 +160,7 @@ paths: ####################### Routes qui existaient déja dans /api/v1 ########
         '200':
           description: Transaction details fetched successfully
           schema:
-            $ref: '#definitions/Transaction'
+            $ref: '#/definitions/Transaction'
         '400':
           description: Bad request - Invalid fields #Champs non valides
         '401':
@@ -180,18 +196,18 @@ paths: ####################### Routes qui existaient déja dans /api/v1 ########
       produces:
         - application/json
       responses:
-        '200'
-        description: Transaction details updated successfully
+        '200':
+          description: Transaction details updated successfully
           schema:
             $ref: '#/definitions/ApiResponse'
-        '400'
-        description: Bad request - Invalid fields
-        '401'
-        description: Unauthorized - Authentification failed
-        '404'
-        description: Transaction or Account not found
-        '500'
-        description: Internal Server Error - Something went wrong
+        '400':
+          description: Bad request - Invalid fields
+        '401':
+          description: Unauthorized - Authentification failed
+        '404':
+          description: Transaction or Account not found
+        '500':
+          description: Internal Server Error - Something went wrong
 
 #### Ajouter une transaction ###############
     post:
@@ -221,18 +237,18 @@ paths: ####################### Routes qui existaient déja dans /api/v1 ########
       produces:
         - application/json
       responses:
-        '200'
-        description: New transaction created successfully
+        '200':
+          description: New transaction created successfully
           schema:
-            $ref: '#/definitions/ApiResponse'
-        '400'
-        description: Bad request - Invalid fields
-        '401'
-        description: Unauthorized - Authentification failed
-        '404'
-        description: Transaction or Account not found
-        '500'
-        description: Internal Server Error - Something went wrong
+           $ref: '#/definitions/ApiResponse'
+        '400':
+          description: Bad request - Invalid fields
+        '401':
+          description: Unauthorized - Authentification failed
+        '404':
+          description: Transaction or Account not found
+        '500':
+          description: Internal Server Error - Something went wrong
 
 ###### Supprimer une transaction
     delete:
@@ -262,18 +278,18 @@ paths: ####################### Routes qui existaient déja dans /api/v1 ########
       produces:
         - application/json
       responses:
-        '200'
-        description: Transaction deleted successfully
+        '200':
+          description: Transaction deleted successfully
           schema:
             $ref: '#/definitions/ApiResponse'
-        '400'
-        description: Bad request - Invalid fields
-        '401'
-        description: Unauthorized - Authentification failed
-        '404'
-        description: Transaction or Account not found
-        '500'
-        description: Internal Server Error - Something went wrong
+        '400':
+          description: Bad request - Invalid fields
+        '401':
+          description: Unauthorized - Authentification failed
+        '404':
+          description: Transaction or Account not found
+        '500':
+          description: Internal Server Error - Something went wrong
 
 ###############################
 securityDefinitions:
@@ -332,17 +348,17 @@ definitions:
       userName:
         type: string
 ############## Suite
- UserAccountList:
+  UserAccountList:
       type: object
       properties:
         accountID:
           type: string
           description: Account ID
         transactions:
-          type: Array
+          type: array
           items:
             $ref: '#/definitions/Transaction'
-    Transaction:
+  Transaction:
       type: object
       properties:
         transactionID:
@@ -369,7 +385,7 @@ definitions:
         note:
           type: string
           description: Note de la transaction
-    TransactionUpdate:
+  TransactionUpdate:
       type: object
       properties:
         category:
@@ -378,7 +394,7 @@ definitions:
         note:
           type: string
           description: Transaction note update
-    TransactionPost:
+  TransactionPost:
       type: object
       properties:
         category:
@@ -387,7 +403,7 @@ definitions:
         note:
           type: string
           description: Transaction note post
-    TransactionDelete:
+  TransactionDelete:
       type: object
       properties:
         category:
@@ -396,4 +412,5 @@ definitions:
         note:
           type: string
           description: Transaction note delete
+
 

@@ -12,12 +12,7 @@ const checkToken = () => {
 const initialState = {
     token: checkToken(), // Initier token avec valeur checkToken()
     isAuthenticated: false, // Initier par défaut
-    /*error: null, //pour stocker d'éventelles erreurs
-    user: null, // aucune information utilisateur n'est présente dans le store
-    firstName: null, //le prénom de l'utilisateur n'est pas défini
-    lastName: null, //le nom de famille de l'utilisateur n'est pas défini
-    userName: null, //le nom d'utilisateur de l'utilisateur n'est pas défini
-    email: null //l'adresse email de l'utilisateur n'est pas définie*/
+
 }
 
 
@@ -27,7 +22,7 @@ const authSlice = createSlice({
     reducers: {
         //  Action pour la mise à jour état pour connexion réussie
         startSignIn(state, action) {
-            state.token = action.payload.token // mise à jou du token
+            state.token = action.payload.token // mise à jour du token
             //console.log("authSlice state.token : ", state.token)
             state.isAuthenticated = true
             localStorage.getItem("localStorage authToken", state.token)

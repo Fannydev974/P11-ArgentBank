@@ -12,6 +12,7 @@ function header() {
     const user = useSelector((state) => state.auth.isAuthenticated)
     const dispatch = useDispatch() // Initialise la fonction dispatch pour la gestion des actions Redux
     const userProfile = useSelector((state) => state.user) // extrait user profil
+    console.log('userProfile :', userProfile);
 
     //  Déconnexion utilisateur (user)
     const userSignOut = () => { // Définit la fonction pour la déconnexion de l'utilisateur
@@ -54,3 +55,6 @@ function header() {
     )
 }
 export default header
+// Ce composant assure la gestion de l'authentification de l'utilisateur,
+// la navigation entre les pages de l'application et l'affichage dynamique du contenu
+// en fonction de l'état de connexion de l'utilisateur.
